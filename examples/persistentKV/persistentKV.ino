@@ -150,11 +150,11 @@ void setup() {
     // Try to create values and write then....
 	  
     // Simple set value:
-    kvs.set("key1","value1");
+    kvs.put("key1","value1");
 	// Pass a K=V:
-    kvs.set("key2=value2");
+    kvs.putKV("key2=value2");
 	// Pass a bunch of KV from PROGMEM:
-    kvs.set(F("key3=value3\nkey4=value4\nkey5=value5"));
+    kvs.putKVs(F("key3=value3\nkey4=value4\nkey5=value5"));
 	// List all keys stored:
     writeValuesToEEPROM();
 	Serial.println("Should reset now to test EEPROM read...");

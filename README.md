@@ -18,7 +18,7 @@ This class implements a class with value of type long
 
 ## How to use it
 
-- setting a value: objectname.set(keyname, value)
+- putting a key/value: objectname.put(keyname, value)
 - obtaining a value: objectname.get(keyname, value variable)
 - obtaining the number of keys/values: objectname,.size()
 - deleting a key/value: objectname.remove(keyname)
@@ -35,7 +35,7 @@ String value;
 
 void setup() {
   Serial.begin(9600);
-  kvs.set("key", "value");
+  kvs.put("key", "value");
   kvs.get("key", value);
   Serial.print("key=");
   Serial.println(value);
