@@ -1,0 +1,27 @@
+##########################################################
+# Syntax Coloring Map For abstractKV, KVString and KVlong
+##########################################################
+
+##########################################################
+# Datatypes (KEYWORD1)
+##########################################################
+
+abstractKV KEYWORD1
+KVString KEYWORD1
+KVlong KEYWORD1
+TVec KEYWORD1
+
+##########################################################
+# Methods and Functions (KEYWORD2)
+##########################################################
+
+size KEYWORD2
+isIndexValid KEYWORD2
+containsKey KEYWORD2
+getIndexKey KEYWORD2
+get KEYWORD2
+getKV
+put KEYWORD2
+putKV
+putKVs 
+remove KEYWORD2
