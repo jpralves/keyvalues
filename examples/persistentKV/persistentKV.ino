@@ -1,3 +1,30 @@
+/*
+ * Filename: persistentKV.ino
+ * Description: Example for library keyvalues
+ *
+ * Version: 1.0.0
+ * Author: Joao Alves <jpralves@gmail.com>
+ * Required files: -
+ * Required Libraries: keyvalues, CRC16
+ * Tested on: Arduino Nano, Arduino Uno, ESP8266
+ *
+ * History:
+ * 1.0.0 - 2017-03-14 - Initial Version
+ *
+ * This library is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #include <EEPROM.h>
 
 #if (defined(__AVR__))
@@ -5,8 +32,6 @@
 #else
 #include <pgmspace.h>
 #endif
-
-// This example requires CRC16 from https://github.com/jpralves/crc16
 
 #include "kvstring.h"
 #include "crc16.h"
@@ -142,6 +167,21 @@ bool readValuesFromEEPROM() {
   return true;
 }
 
+void listKVs() {
+  String k, v;
+  uint16_t keycount = kvs.size();
+  
+  Serial.print(keycount);
+  Serial.println(F(" K/V found."));
+  for (uint16_t i = 0; i < keycount; i++) {
+    if (kvs.get(i, k, v)) {
+  		Serial.print(k);
+  		Serial.print(" = ");
+  		Serial.println(v);  
+    }
+  }
+}
+
 void setup() {
   Serial.begin(9600);
   if (readValuesFromEEPROM()) {
@@ -158,21 +198,6 @@ void setup() {
 	// List all keys stored:
     writeValuesToEEPROM();
 	Serial.println("Should reset now to test EEPROM read...");
-  }
-}
-
-void listKVs() {
-  String k, v;
-  uint16_t keycount = kvs.size();
-  
-  Serial.print(keycount);
-  Serial.println(F(" K/V found."));
-  for (uint16_t i = 0; i < keycount; i++) {
-    if (kvs.get(i, k, v)) {
-  		Serial.print(k);
-  		Serial.print(" = ");
-  		Serial.println(v);  
-    }
   }
 }
 

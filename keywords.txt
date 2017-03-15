@@ -20,8 +20,8 @@ isIndexValid KEYWORD2
 containsKey KEYWORD2
 getIndexKey KEYWORD2
 get KEYWORD2
-getKV
+getKV KEYWORD2
 put KEYWORD2
-putKV
-putKVs 
+putKV KEYWORD2
+putKVs KEYWORD2
 remove KEYWORD2

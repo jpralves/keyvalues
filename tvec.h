@@ -4,8 +4,6 @@
 //    Copyright (C) 2016 PatternAgents, LLC
 // https://github.com/thingSoC/embedis/
 
-
-
 #ifndef TVEC_H
 #define TVEC_H
 
