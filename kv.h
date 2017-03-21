@@ -106,6 +106,10 @@ template <typename T> class abstractKV {
 
     virtual bool getKV(const int, String&) = 0;
 
+    bool put(String key, T value) {
+      return put(key.c_str(), value);
+    }
+	
     bool put(const char* key, T value) {
       int pos = getIndexKey(key);
       bool found = (pos >= 0);
@@ -173,6 +177,13 @@ template <typename T> class abstractKV {
       return found;
     };
 
+    bool remove(const int pos) {
+	  bool found = isIndexValid(pos);
+      if (found) {
+        keyValues.remove(pos);
+      }
+      return found;
+    };
 
 };
 
