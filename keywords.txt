@@ -6,22 +6,22 @@
 # Datatypes (KEYWORD1)
 ##########################################################
 
-abstractKV KEYWORD1
-KVString KEYWORD1
-KVlong KEYWORD1
-TVec KEYWORD1
+abstractKV	KEYWORD1
+KVString	KEYWORD1
+KVlong	KEYWORD1
+TVec	KEYWORD1
 
 ##########################################################
 # Methods and Functions (KEYWORD2)
 ##########################################################
 
-size KEYWORD2
-isIndexValid KEYWORD2
-containsKey KEYWORD2
-getIndexKey KEYWORD2
-get KEYWORD2
-getKV KEYWORD2
-put KEYWORD2
-putKV KEYWORD2
-putKVs KEYWORD2
-remove KEYWORD2
+size	KEYWORD2
+isIndexValid	KEYWORD2
+containsKey	KEYWORD2
+getIndexKey	KEYWORD2
+get	KEYWORD2
+getKV	KEYWORD2
+put	KEYWORD2
+putKV	KEYWORD2
+putKVs	KEYWORD2
+remove	KEYWORD2
